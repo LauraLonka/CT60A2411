@@ -1,3 +1,6 @@
+/* Results Chart fragment: */
+/* Fragment for displaying the emission calculation results in a pie chart */
+
 package com.example.harjoitusty20;
 
 import android.graphics.Color;
@@ -52,25 +55,24 @@ public class ResultsChartFragment extends Fragment implements View.OnClickListen
         int plant_percentage = 100 * (int) plantEmissions / (int) totalEmissions;
         int restaurant_percentage = 100 * (int) restaurantEmissions / (int) totalEmissions;
 
-        // Create the object of TextView and PieChart class
+        // Creating the object of TextView and PieChart class
         TextView tvR, tvPython, tvCPP, tvJava;
         PieChart pieChart;
 
-        // Link those objects with their respective
-        // id's that is given in .XML file
+        // Linking those objects with their id's that are given in .XML file
         tvR = v.findViewById(R.id.tvR);
         tvPython = v.findViewById(R.id.tvPython);
         tvCPP = v.findViewById(R.id.tvCPP);
         tvJava = v.findViewById(R.id.tvJava);
         pieChart = v.findViewById(R.id.piechart);
 
-        // Set the percentage of emission sources
+        // Setting the percentage of emission sources
         tvR.setText(Integer.toString(meat_percentage));
         tvPython.setText(Integer.toString(plant_percentage));
         tvCPP.setText(Integer.toString(dairy_percentage));
         tvJava.setText(Integer.toString(restaurant_percentage));
 
-        // Set the data and color to the pie chart
+        // Setting the data and color to the pie chart
         pieChart.addPieSlice(
                 new PieModel(
                         "Meat and fish",

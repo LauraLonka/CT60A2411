@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
-        android:background="@android:color/darker_gray" />
+        android:background="#F3F3F3" />
 
     <Button
         android:id="@+id/log_save_button"

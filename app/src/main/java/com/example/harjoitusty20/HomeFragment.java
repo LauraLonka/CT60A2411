@@ -1,3 +1,6 @@
+/* Home Fragment: */
+/* Fragment for displaying the Home view */
+
 package com.example.harjoitusty20;
 
 import android.os.Bundle;

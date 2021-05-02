@@ -46,9 +46,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
     private int weight;
 
     // Fragment management
-    public interface CalculateCO2FragmentListener {
-        void onInputASent(CharSequence input);
-    }
+    public interface CalculateCO2FragmentListener { void onInputASent(CharSequence input); }
 
     @Nullable
     @Override
@@ -81,7 +79,9 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
     // Spinner for selecting the diet (vegan, vegetarian or omnivore)
     public void dietSpinner(View v) {
+
         Spinner spinner = v.findViewById(R.id.diet_spinner);
+
         // List of diets can be found from values --> strings.xml --> diets
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(v.getContext(),
                 R.array.diets, android.R.layout.simple_spinner_item);
@@ -109,10 +109,13 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         beef_lamb_seekBar.setMax(200);
 
         beef_lamb_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             int progress_value;
             double consumption_value;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 progress_value = progress;
                 consumption_value = (double) progress_value * 0.004;
                 beef_lamb_textView.setText(df2.format(consumption_value));
@@ -124,6 +127,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
                 consumption_value = (double) progress_value * 0.004;
                 beef_lamb_textView.setText(df2.format(consumption_value));
                 beefLevel = progress_value;
@@ -141,10 +145,13 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         pork_poultry_seekBar.setMax(200);
 
         pork_poultry_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             int progress_value;
             double consumption_value;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 progress_value = progress;
                 consumption_value = (double) progress_value * 0.01;
                 pork_poultry_textView.setText(df2.format(consumption_value));
@@ -156,6 +163,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
                 consumption_value = (double) progress_value * 0.01;
                 pork_poultry_textView.setText(df2.format(consumption_value));
                 porkPoultryLevel = progress_value;
@@ -173,10 +181,13 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         fish_seafood_seekBar.setMax(200);
 
         fish_seafood_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             int progress_value;
             double consumption_value;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 progress_value = progress;
                 consumption_value = (double) progress_value * 0.006;
                 fish_seafood_textView.setText(df2.format(consumption_value));
@@ -188,6 +199,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
                 consumption_value = (double) progress_value * 0.006;
                 fish_seafood_textView.setText(df2.format(consumption_value));
                 fishLevel = progress_value;
@@ -205,10 +217,13 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         cheese_seekBar.setMax(200);
 
         cheese_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             int progress_value;
             double consumption_value;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 progress_value = progress;
                 consumption_value = (double) progress_value * 0.003;
                 cheese_textView.setText(df2.format(consumption_value));
@@ -220,6 +235,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
                 consumption_value = (double) progress_value * 0.003;
                 cheese_textView.setText(df2.format(consumption_value));
                 cheeseLevel = progress_value;
@@ -237,10 +253,13 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         dairy_seekBar.setMax(200);
 
         dairy_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             int progress_value;
             double consumption_value;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 progress_value = progress;
                 consumption_value = (double) progress_value * 0.038;
                 dairy_textView.setText(df2.format(consumption_value));
@@ -252,6 +271,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
                 consumption_value = (double) progress_value * 0.038;
                 dairy_textView.setText(df2.format(consumption_value));
                 dairyLevel = progress_value;
@@ -269,10 +289,13 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         rice_seekBar.setMax(200);
 
         rice_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             int progress_value;
             double consumption_value;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 progress_value = progress;
                 consumption_value = (double) progress_value * 0.0009;
                 rice_textView.setText(df2.format(consumption_value));
@@ -284,6 +307,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
                 consumption_value = (double) progress_value * 0.0009;
                 rice_textView.setText(df2.format(consumption_value));
                 riceLevel = progress_value;
@@ -301,10 +325,13 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         winter_vegetables_seekBar.setMax(200);
 
         winter_vegetables_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             int progress_value;
             double consumption_value;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 progress_value = progress;
                 consumption_value = (double) progress_value * 0.014;
                 winter_vegetables_textView.setText(df2.format(consumption_value));
@@ -316,6 +343,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
                 consumption_value = (double) progress_value * 0.014;
                 winter_vegetables_textView.setText(df2.format(consumption_value));
                 winterSaladLevel = progress_value;
@@ -333,10 +361,13 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         eggs_seekBar.setMax(1000);
 
         eggs_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             int progress_value;
             double consumption_value;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 progress_value = progress;
                 consumption_value = (double) progress_value * 0.03;
                 eggs_textView.setText(df2.format(consumption_value));
@@ -348,6 +379,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
                 consumption_value = (double) progress_value * 0.03;
                 eggs_textView.setText(df2.format(consumption_value));
                 eggLevel = progress_value;
@@ -365,9 +397,12 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         restaurant_seekBar.setMax(800);
 
         restaurant_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             int progress_value;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 progress_value = progress;
                 restaurant_textView.setText("" + progress_value);
             }
@@ -378,6 +413,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
                 restaurant_textView.setText("" + progress_value);
                 restaurantSpending = progress_value;
             }
@@ -394,9 +430,12 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         weight_seekBar.setMax(300);
 
         weight_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             int progress_value;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 progress_value = progress;
                 weight_textView.setText("" + progress_value);
             }
@@ -407,6 +446,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
                 weight_textView.setText("" + progress_value);
                 weight = progress_value;
             }
@@ -416,6 +456,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
     // When clicking the Calculate Emissions -button:
     @Override
     public void onClick(View v) {
+
         // Checking, if the Low Carbon -check box is ticked and assigning boolean accordingly
         if(checkBox.isChecked()) {
             lowCarbonPreference = true;
@@ -440,6 +481,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
 
         // Opening the Results Fragment to calculate emissions and display the calculation results
         Fragment results_fragment = null;
+
         // Transferring the new Weekly Input -object to the Results Fragment
         results_fragment = new ResultsFragment(new_week);
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -451,6 +493,7 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
     // Fragment management
     @Override
     public void onAttach(Context context) {
+
         super.onAttach(context);
         if (context instanceof CalculateCO2FragmentListener) {
             listener = (CalculateCO2FragmentListener) context;
@@ -466,5 +509,4 @@ public class CalculateCO2Fragment extends Fragment implements AdapterView.OnItem
         super.onDetach();
         listener = null;
     }
-
 }

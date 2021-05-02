@@ -19,24 +19,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, CalculateCO2Fragment.CalculateCO2FragmentListener, ResultsFragment.ResultsFragmentListener {
-    // NAVIGATION DRAWER
-    private DrawerLayout drawer;
 
-    // CALCULATE CO2 FRAGMENT
+    private DrawerLayout drawer;
     private CalculateCO2Fragment calculateCO2Fragment;
 
+    // Implementing Log-object to be able to call all of the fragments correctly
     Log l = new Log();
 
-    // MAIN CODE
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // CALCULATE CO2 FRAGMENT
         calculateCO2Fragment = new CalculateCO2Fragment();
 
-        // NAVIGATION DRAWER
+        // Defining navigation drawer items
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
@@ -46,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new HomeFragment()).commit();
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    // NAVIGATION DRAWER
+    // When selecting items from the navigation drawer
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -90,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    // NAVIGATION DRAWER
+    // When the navigation drawer is pressed back
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {

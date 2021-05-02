@@ -1,11 +1,12 @@
+/* Log class: */
+/* Class for creating Log-objects that hold weekly emissions calculation results and weight entries */
+
 package com.example.harjoitusty20;
 
-import android.os.Bundle;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.text.DecimalFormat;
 
 public class Log {
+
     private int weight;
     private double dairyEmissions;
     private double meatEmissions;
@@ -13,6 +14,8 @@ public class Log {
     private double restaurantEmissions;
     private double totalEmissions;
     private int weekNumber;
+
+    private static DecimalFormat df2 = new DecimalFormat("#.##");
 
     public Log() {
         this.weight = 0;
@@ -40,12 +43,13 @@ public class Log {
 
     @Override
     public String toString() {
-        return ("Dairy emissions:"+this.getDairyEmissions()+
-                "\nMeat emissions: "+ this.getMeatEmissions() +
-                "\nPlant emissions: "+ this.getPlantEmissions() +
-                "\nRestaurant emissions: " + this.getRestaurantEmissions() +
-                "\nTotal emissions: " + this.getTotalEmissions() +
-                "\nWeight: " + this.getWeight());
+
+        return (" Dairy emissions:  " + df2.format(this.getDairyEmissions()) + " kg CO2e" +
+                "\n Meat emissions:  " + df2.format(this.getMeatEmissions()) + " kg CO2e" +
+                "\n Plant emissions:  " + df2.format(this.getPlantEmissions()) + " kg CO2e" +
+                "\n Restaurant emissions:  " + df2.format(this.getRestaurantEmissions()) + " kg CO2e" +
+                "\n Total emissions:  " + df2.format(this.getTotalEmissions()) + " kg CO2e" +
+                "\n Weight:  " + this.getWeight() + " kg");
     }
 
     // Getters

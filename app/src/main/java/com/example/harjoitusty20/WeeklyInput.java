@@ -1,9 +1,12 @@
+/* Weekly Input class: */
+/* Class for the users input data of the amount of weekly consumed food and weekly weight*/
+
 package com.example.harjoitusty20;
 
 import java.util.ArrayList;
 
 public class WeeklyInput {
-    private int week_number = 0;
+
     private String diet;
     private Boolean lowCarbonPreference;
     private int beefLevel;
@@ -18,7 +21,6 @@ public class WeeklyInput {
     private int weight;
 
     public WeeklyInput() {
-        this.week_number = 0;
         this.diet = null;
         this.lowCarbonPreference = null;
         this.beefLevel = 0;
@@ -33,9 +35,8 @@ public class WeeklyInput {
         this.weight = 0;
     }
 
-    public WeeklyInput(int wknmbr, String diet, Boolean lowcarb, int beef, int fish,
+    public WeeklyInput(String diet, Boolean lowcarb, int beef, int fish,
                        int pork, int dairy, int cheese, int rice, int egg, int salad, int restaurant, int weight) {
-        this.week_number = wknmbr;
         this.diet = diet;
         this.lowCarbonPreference = lowcarb;
         this.beefLevel = beef;
@@ -60,10 +61,6 @@ public class WeeklyInput {
     }
 
     // Getters
-    public int getWeek() {
-        return week_number;
-    }
-
     public String getDiet() {
         return diet;
     }

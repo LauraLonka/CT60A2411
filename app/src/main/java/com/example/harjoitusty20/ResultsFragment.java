@@ -75,9 +75,7 @@ public class ResultsFragment extends Fragment implements View.OnClickListener {
     }
 
     // Fragment management
-    public interface ResultsFragmentListener {
-        void onInputASent(CharSequence input);
-    }
+    public interface ResultsFragmentListener { void onInputASent(CharSequence input); }
 
     // Fragment management
     @Nullable

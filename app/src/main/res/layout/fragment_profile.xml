@@ -5,6 +5,7 @@
     android:background="@android:color/white">
 
     <TextView
+        android:id="@+id/profile_name_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView20"
@@ -37,7 +38,7 @@
         android:src="@mipmap/ic_launcher_profilepicture_round" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/profile_info_textVieW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView20"
@@ -47,57 +48,24 @@
         android:layout_marginTop="200dp"
         android:layout_marginEnd="50dp"
         android:fontFamily="@font/poppins"
-        android:text="Age: 78"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView23"
+    <Button
+        android:id="@+id/edit_profile_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView20"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="241dp"
-        android:layout_marginEnd="50dp"
-        android:fontFamily="@font/poppins"
-        android:text="Height: 52 cm"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView20"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="282dp"
         android:layout_marginEnd="49dp"
-        android:fontFamily="@font/poppins"
-        android:text="Area: Korso, Finland"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView20"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="323dp"
-        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="30dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Gold member"
-        android:textAlignment="center"
-        android:textColor="#F9AA33"
+        android:text="Edit Profile"
+        android:textAllCaps="false"
         android:textSize="18sp"
         android:textStyle="bold" />
+
 </RelativeLayout>
